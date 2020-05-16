@@ -17,3 +17,11 @@ for i in range(cases):
 
 #print의 설정에 따른 출력 방법 익히기
 #for 함수 안에서도 a, b 변수 설정 가능한 것 인지하기
+
+"""
+print함수 자료 참조
+이분이 정리를 너무 잘해놓은 듯 하다.
+
+https://withcoding.com/64
+
+"""
