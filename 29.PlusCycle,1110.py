@@ -12,15 +12,6 @@
 -> length of cycle - > 4
 """
 
-"""
-1st trial
-while True:
-  try:
-    a = list(map(int,input().split))
-    
-  except:
-    a    
-"""
 
 #% 와 //을 사용 할 수 있다는 생각을 안한체 list로 뽑아서 더하는것을 반복하려함.
 
@@ -35,3 +26,4 @@ while True:
   if(num == n):
     break
 print(count)
+
