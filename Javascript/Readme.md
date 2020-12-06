@@ -1,0 +1,2 @@
+leetcode.com
+easy class
