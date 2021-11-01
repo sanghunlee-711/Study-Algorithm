@@ -52,3 +52,5 @@ def solution(L, x):
     return idx
 
 print(solution([2, 5, 7, 9, 11], 4))
+
+
