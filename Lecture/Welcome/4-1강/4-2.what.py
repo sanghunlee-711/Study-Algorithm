@@ -1,3 +1,4 @@
+# -*-coding:utf-8-*-
 
 #factorial example
 def what(n):

@@ -10,7 +10,7 @@ class LinkedList:
         self.head = None
         self.tail = None
 
-    def getAt(self, pos):
+    def getAt(self, pos): #특정 원소 참조(k 번째)
         if pos < 1 or pos > self.nodeCount:
             return None
         i = 1
@@ -20,7 +20,7 @@ class LinkedList:
             i += 1
         return curr
 
-    def traverse(self):
+    def traverse(self): # 리스트 순회
         answer = []
         curr = self.head #헤드 지정
         if curr == None: # tail인 경우 처리
