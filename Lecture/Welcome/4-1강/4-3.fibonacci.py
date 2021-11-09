@@ -1,3 +1,5 @@
+# -*-coding:utf-8-*-
+
 # f0 = 0, f1 =1, fn = fn-1 + fn-2, n >=2
 # iterative, recursive version 
 
