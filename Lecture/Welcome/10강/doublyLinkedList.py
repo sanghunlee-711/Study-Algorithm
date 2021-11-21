@@ -99,23 +99,15 @@ class DoublyLinkedList:
       return self.insertAfter(prev, newNode)
   
     def popAfter(self,prev):
-      #뽑아낼 녀석 타겟
-      curr = prev.next
-      #마지막노드 인 경우
-      if curr.next.next is None:
-        #  + 첫번째 노드인 경우 -> 길이가 1개인걸로 확정 ->뽑아내면 빈리스트
-        if prev.prev.prev is None:
-          self.head.next = self.tail # 양방향 연결
-          self.tail.prev = self.head #양방향 연결
-          # + 길이가 한 개를 넘어서는 경우
-        else:
-          self.tail.prev = curr.prev
-          
-      else:
+        #최 극단 처리는 head와 tail에 노드가 이미 존재하기 때문에 해주지 않아도 됨
+        #뽑아낼 녀석 타겟팅
+        curr = prev.next
+        #poping
         prev.next = curr.next
-
-      self.nodeCount -= 1
-      return curr.data
+        #양방향 설정
+        prev.next.prev = prev
+        self.nodeCount -= 1
+        return curr.data
 
     def popBefore(self, next):
       curr = next.prev
@@ -125,10 +117,10 @@ class DoublyLinkedList:
       return curr.data
 
     def popAt(self, pos):
-      if pos < 0 or pos > self.nodeCount + 1:
+      if pos < 1 or pos > self.nodeCount : #범위 중요(이제 헤드랑 테일에는 더미노드가 존재)
         raise IndexError
       
-      prev = self.getAt(pos - 1) 
+      prev = self.getAt(pos - 1)  #popBefore를 하게 되면 첫번째 노드인 경우 처리가 안됨
       return self.popAfter(self, prev)
 
     def concat(self, L):
