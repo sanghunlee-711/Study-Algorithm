@@ -27,26 +27,31 @@ prec = {
 def solution(S):
     answer = ""
     opStack = ArrayStack()
-    i = 0
+
     for s in S:
-        if s == ")" and not opStack.isEmpty():
-            print(".")
-            newS = opStack.pop()
-            while newS == '(':                    
-                    answer += newS 
         
-        if s in prec:
-            if prec[s] > prec[opStack.peek()] :
+
+        if s == ")" : 
+            while opStack.peek() != "(":
+                answer += opStack.pop()
+            opStack.pop()
+        elif s in prec:
+            if s == "(" or opStack.isEmpty():
                 opStack.push(s)
-            else:                
-                newS = opStack.pop()
-                answer += newS 
+            
+            else:
+                while prec[opStack.peek()] >= prec[s]:
+                    answer += opStack.pop()
+                    if opStack.isEmpty():
+                        break
                 opStack.push(s)
+
+
         else:
             answer = answer + s
     
     
-        while not opStack.isEmpty():
-            answer += opStack.pop()
+    while not opStack.isEmpty():
+        answer += opStack.pop()
     
     return answer
