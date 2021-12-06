@@ -32,6 +32,15 @@ class Node:
       traversal = self.right.preorder()
     return traversal
 
+  def postorder(self):
+    traversal =[]
+    if self.left:
+      traversal += self.left.postorder()
+    if self.right:
+      traversal = self.right.postorder()
+    traversal.append(self.data)
+
+
 class BinaryTree:
   def __init__(self,r):
     self.root = r #root가 어딘지만 지정 해주면 어차피 Node에서 이미 간선(left, right)이 정해져있기 때문에 다 정의가 된다.
@@ -57,5 +66,11 @@ class BinaryTree:
   def preorder(self):
     if self.root:
       return self.root.preorder()
+    else:
+      return []
+
+  def postorder(self):
+    if self.root:
+      return self.root.postorder()
     else:
       return []
