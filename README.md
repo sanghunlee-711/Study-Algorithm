@@ -1,9 +1,5 @@
-# Study-Algorithm By Python(20200512~ 20200701)
+# Study-Algorithm With Python(202/10 ~)
+[프로그래머스 강의-어서와! 자료구조와 알고리즘은 처음이지?](https://programmers.co.kr/learn/courses/57) 정리  (/Lecture/Welcome)
 
-Baekjun code
-
-# Study-Algorithm By JavaScript(20201023~)
-
-## Programmers Lev.1
-
-<a href = "https://programmers.co.kr/learn/challenges?selected_part_id=12079">Link</a>
+# Study-Algorithm By JavaScript(2021/03~)
+<a href = "https://velog.io/@cloudlee711">Programmers Level.1 문제풀이</a>
