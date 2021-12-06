@@ -18,9 +18,18 @@ class Node:
     traversal = []
     if self.left:
       traversal += self.left.inorder()
-    tranversal.append(self.data)
+    traversal.append(self.data)
     if self.right:
       traversal += self.right.inorder()
+    return traversal
+  
+  def preorder(self):
+    traversal = []
+    traversal.append(self.data)
+    if self.left:
+      traversal += self.left.preorder()
+    if self.right:
+      traversal = self.right.preorder()
     return traversal
 
 class BinaryTree:
@@ -42,5 +51,11 @@ class BinaryTree:
   def inorder(self):
     if self.root:
       return self.root.inorder()
+    else:
+      return []
+
+  def preorder(self):
+    if self.root:
+      return self.root.preorder()
     else:
       return []
