@@ -41,13 +41,23 @@ class Node:
     else: #찾으려는 노드 발견
       return self,parent #slef -> 찾아진 노드 , parent가 Parent이므로 그대로 리턴
 
+
+  #작으면 왼쪽으로 가고 insert메서드 재귀적으로 호출하거나 왼쪽 또는 오른쪽 서브트리가 없으면 삽입해야할 위치를 발견한 것이므로 새로운 노드를 만들어 달아주면 됨.
   def insert(self, key, data):
-    if key < self.key: #작으면 왼쪽으로 가고 insert메서드 재귀적으로 호출하거나 왼쪽 또는 오른쪽 서브트리가 없으면 삽입해야할 위치를 발견한 것이므로 새로운 노드를 만들어 달아주면 됨.
-      pass
-    elif key > self.key:
-      pass
-    else:
-      raise KeyError('...')
+      if key < self.key: 
+          #현재 노드보다 가지고 있는데이터가 작은 경우 -> 왼쪽으로 가야하는 케이스인  경우
+          if self.left:
+              return self.left.insert(key, data)
+          else:
+            self.left = Node(key,data)
+      elif key > self.key:
+          if self.right:
+              return self.right.insert(key,data)
+          else:
+            self.right = Node(key,data)
+      else:
+          raise KeyError('중복된 키에러 발생')
+
 
 
 class BinSearchTree:
