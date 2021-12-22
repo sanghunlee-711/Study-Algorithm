@@ -1,9 +1,5 @@
 function solution(s){
   let stack = [];
-  if (s[0] === ")") {
-    //에러처리
-      return false;
-  }
   
   for (let i = 0; i < s.length; i +=1){
       if(s[i] === '('){
@@ -21,5 +17,5 @@ function solution(s){
   }
   
   //stack이 비어있지 않으면 false
-  return stack.length === 0 ? true : false;
+  return stack.length === 0;
 }
