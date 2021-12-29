@@ -10,7 +10,7 @@ const tree = [
   // 1* 2(루트노드의 왼쪽), 1*2+1(루트노드의 오른쪽)
   3, 8,
   //2*2, 2*2+1, 3*2, 3*2 +1
-  2//value3을가진 노드의 왼쪽, 5, undefined, 7,
+  2, 5, undefined, 7, //value3을가진 노드의 왼쪽 = value2를 가진 노드
   // 4*2, 4*2+1, 5*2, 5*2+1
   undefined, undefined, undefined, 4
 ]
