@@ -29,6 +29,7 @@ const solution = (n, edge) =>{
   const graph = Array.from((Array(n+1)), ()=>[]);
 
   for(const[src, dest] of edge) {
+    //인덱스가 가진 배열의 각 원소는 인덱스(출발노드) 에서 각 원소 (도착노드)임
     graph[src].push(dest); //출발지에 도착지 연결
     graph[dest].push(src) //도착지와출발지 양방향
   }
