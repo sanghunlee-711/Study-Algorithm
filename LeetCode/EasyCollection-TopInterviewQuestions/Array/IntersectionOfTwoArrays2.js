@@ -34,3 +34,16 @@ const intersect = (nums1, nums2) => {
   }
   return answer;
 };
+
+// 베스트 답변 -> 이러면 O(n^2) 아닌가 생각이 드는데 효율을 더 빠르다 허허
+// js 고차 함수를 잘 활용한 사례
+const intersect = (nums1, nums2) => {
+  const ans = [];
+  nums1.forEach(v => {
+    if (nums2.includes(v)) {
+      nums2.splice(nums2.indexOf(v), 1); //그냥 들어있으면 해당 인덱스 찾아서 splice로 제거
+      ans.push(v); //답변에 추가
+    }
+  });
+  return ans;
+};
