@@ -13,6 +13,10 @@
 // Incrementing by one gives 123 + 1 = 124.
 // Thus, the result should be [1,2,4].
 
+// 1 <= digits.length <= 100
+// 0 <= digits[i] <= 9
+// digits does not contain any leading 0's.
+
 
 // First Trial
 // 쉽다 생각하고 걍 join이랑 스플릿만 갈겨서끝내려함 
