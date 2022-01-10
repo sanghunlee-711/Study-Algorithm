@@ -87,3 +87,4 @@ var dog = new Animal();
 >
 ![프로토타입-딥다이브자바스크립트](https://poiemaweb.com/js-prototype)
 ![Why Use Prototype in JavaScript-idallo.com](https://idiallo.com/javascript/why-use-prototypes)
+![상속과프로토타입-MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
