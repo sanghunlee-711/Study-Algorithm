@@ -46,6 +46,44 @@
   * 객체의 프로퍼티에 값을 할당 시 프로토타입 체인은 미동작
   * 객체에 해당프로퍼티가 있는경우 값을 재할당하고 없는 경우 해당객체에 값을 동적으로 추가하기 때문.
 
+## 프로토타입의 장점
+메모리를 덜 사용할 수 있게 된다.
+
+```javascript
+function Animal(){
+    this.walk = function(){};
+    this.talk = function(){};
+    this.jump = function(){};
+}
+var cat = new Animal();
+var dog = new Animal();
+console.log(cat.walk === dog.walk) // false 
+```
+
+만약 위의 코드처럼 계속해서 새로운 인스턴스를 생성할 때 각 생성자함수 내부의 메서드는 별도의 다른 메모리 공간을 차지하게 된다.
+새로운 인스턴스들이 new키워드를 통해 새롭게 생성되기 때문이다.
+이렇게 되면 동일한 역할을 하는 것이 메모리를 중복차지하고 있으므로 비효율적일 수 있다.
+
+```javascript
+function Animal(){};
+Animal.prototype.walk = function(){};
+Animal.prototype.talk = function(){};
+Animal.prototype.jump = function(){};
+
+var cat = new Animal();
+var dog = new Animal();
+(cat.walk === dog.walk) // true
+```
+그래서 이렇게 prototype에 지정을 해놓고 쓰면 굳이 메모리 낭비를 하는 수고를 덜 수도 있다.
+
+## 프로토타입의 단점
+  * 프로토타입 체인에 걸친 속성검색으로 성능에 나쁜영향을 줄 수도 있고
+    존재하지 않는 속성에 접근하려는 시도는 항상 모든 프로토타입 체인 전체를 탐색해서 확인하게 만듦으로 비효율적임.
+  * prototype을 잘못 건드리면 언어의 오작동확률이 높음
+
+
+
 # 참고
 >
 ![프로토타입-딥다이브자바스크립트](https://poiemaweb.com/js-prototype)
+![Why Use Prototype in JavaScript-idallo.com](https://idiallo.com/javascript/why-use-prototypes)
