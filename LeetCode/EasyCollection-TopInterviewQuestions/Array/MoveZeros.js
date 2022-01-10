@@ -52,3 +52,18 @@ var moveZeroes = function(nums) {
   }
  return nums.filter((el)=> el !== false)   
 };
+
+//Best Answer
+
+var moveZeroes = function(nums) {
+  let len = nums.length, start=0;
+  
+  for(let i=0; i<len; i++) {
+      if (nums[i] != 0) nums[start++] = nums[i];
+  }
+  
+  for(;start<len;start++)  nums[start] = 0;
+  
+  return nums;
+  
+};
