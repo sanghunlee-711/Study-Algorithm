@@ -8,7 +8,10 @@ class MaxHeap {
     let currentIndex = this.heap.length - 1;  //정점
     let parentIndex = Math.floor(currentIndex / 2) // 이진트리의 부모 노드 위치
 
-    while(parentIndex !== 0 && this.heap[parentIndex] < value) { //부모가 우선순위가 낮거나 루트가 아닐 때 까지
+    //부모가 우선순위가 낮거나 루트가 아닐 때 까지
+    while(
+      parentIndex !== 0 && this.heap[parentIndex] < value
+      ){ 
       const temptation = this.heap[parentIndex];
       //부모와 자식의 순서를 바꿔준다.
       this.heap[parentIndex] = value; 
