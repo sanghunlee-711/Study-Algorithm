@@ -16,6 +16,7 @@
 function solution(n, times) {
   let minute = 0;
   let sum = 0;
+  
   while (sum <= n) {
     minute += 1;
     sum = times.map((el)=> Math.floor(minute/el)).reduce((a,b)=> (a+b)); //심사관들 처리한 전체 인원 수    
