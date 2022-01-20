@@ -19,3 +19,6 @@ var reverseString = function(s) {
       s[i] = temp;
 }
 };
+
+const s = ["h","e","l","l","o"];
+rev(s);
