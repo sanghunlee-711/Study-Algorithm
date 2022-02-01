@@ -14,6 +14,7 @@
 // Finding Trials
 // 거의 모든 블로그가 동일한 재귀형식만 변수명만 바꿔서 똑같은 로직임
 // 파이썬으로 접근하신 몇몇분들은 곱집합을 사용하기도 함
+// 변수를 별도 할당하지 않고 인덱스를 통해 값을 구함
 
 function solutionRecursive(numbers, target) {
   
@@ -29,6 +30,26 @@ function solutionRecursive(numbers, target) {
 }
 
 solution(numbers, targets);
+
+// Finding Solution 2
+
+// 재귀적인데 직접 변수에 값을 할당해줌
+function solution(numbers, target) {
+  let answer = 0;
+  getAnswer(0,0);
+  function getAnswer(x,value) {
+      if(x<numbers.length){
+          getAnswer(x+1,value + numbers[x]);
+          getAnswer(x+1,value - numbers[x]);
+      } else{
+          if(value === target){
+              answer++
+          }
+      }
+  }
+  return answer;
+}
+
 
 
 // Best Solution
