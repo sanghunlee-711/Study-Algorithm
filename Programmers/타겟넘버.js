@@ -19,14 +19,15 @@
 function solutionRecursive(numbers, target) {
   
   const finding = (idx, cnt) =>{
-  if(idx === numbers.length){
-    return cnt === target ? 1 : 0
+  if(idx === numbers.length){ // 다 탐색하면
+    return cnt === target ? 1 : 0 //같으면 1 아니면 0
   }
   
   return (finding(idx + 1, cnt + numbers[idx]) + finding(idx + 1, cnt - numbers[idx])); //재귀 형태로 계속 카운트 체크하는 방법
+  // 인덱스는 늘려주고 +, - 케이스가 계속 확장되어 나갈 것임
   }
   
-  return finding(0,0);
+  return finding(0,0); //idx:0, count:0부터 시작
 }
 
 solution(numbers, targets);
@@ -38,11 +39,11 @@ function solution(numbers, target) {
   let answer = 0;
   getAnswer(0,0);
   function getAnswer(x,value) {
-      if(x<numbers.length){
+      if(x<numbers.length){ // 다 탐색안했으면 재귀 돌림
           getAnswer(x+1,value + numbers[x]);
           getAnswer(x+1,value - numbers[x]);
       } else{
-          if(value === target){
+          if(value === target){ // 같으면 answer 카운트 해줌
               answer++
           }
       }
