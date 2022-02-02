@@ -31,7 +31,7 @@
 // if idx + 1 is divided with 3 === buzz
 // if idx + 1 is divided with 3  and 5 === fizzbuzz
 const solution = (n) =>{
-  return Array.from(Array(n), (_, i)=> i+1).map((el)=>{
+  return Array.from(Array(n), (_, i)=> {i+1}).map((el)=>{
     if(el % 3 === 0 && el % 5 === 0){
       return 'FizzBuzz'
     }else if(el%5 === 0){
@@ -74,3 +74,22 @@ solution(15);
   return array;
 
 };
+
+// Extra trials
+//굳이 map안돌리고 한방에 해결 가능!
+// 효율은 그다지 좋지 않음 ;-;
+const solution = (n) =>{
+  return Array.from(Array(n), (v, i)=> {
+    const el = i+1;
+    if(el % 3 === 0 && el % 5 === 0){
+      return 'FizzBuzz'
+    }else if(el%5 === 0){
+      return 'Buzz'
+    }else if(el%3 === 0){
+      return 'Fizz'
+    }
+    else{
+      return el+"";
+    }
+    });
+}
