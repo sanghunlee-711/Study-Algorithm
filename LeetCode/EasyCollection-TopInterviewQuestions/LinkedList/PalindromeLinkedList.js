@@ -1,5 +1,19 @@
+//ref: https://leetcode.com/explore/interview/card/top-interview-questions-easy/93/linked-list/772/
 
+// Given the head of a singly linked list, return true if it is a palindrome.
 
+// Example 1:
+// Input: head = [1,2,2,1]
+// Output: true
+
+// Example 2:
+// Input: head = [1,2]
+// Output: false
+
+// Constraints:
+// The number of nodes in the list is in the range [1, 105].
+// 0 <= Node.val <= 9
+// Follow up: Could you do it in O(n) time and O(1) space?
 
 // First trial
 // 링크드리스트를 reverse 시키는 문제를 풀어보았으므로 이를 통해 확인하려 함
