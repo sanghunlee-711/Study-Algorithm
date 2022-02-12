@@ -84,6 +84,28 @@ const myAtoi = (s) => {
   return s[0] === '-' ? Math.max(MIN, -res) : Math.min(MAX, res);
 };
 
+//Best Solution 2
+var myAtoi = function(s) {
+  // extracts unique numbers until is undefined
+  const parseIntWithRadix = parseInt(s, 10);
+ return getConstraints(parseIntWithRadix)
+};
+
+
+function getConstraints(num){
+  if(isNaN(num)) return 0;
+  const upperBound = Math.pow(2,31) - 1;
+  const lowerBound = Math.pow(-2,31);
+
+  if(num > upperBound){
+   return upperBound
+  }else if(num < lowerBound){
+    return lowerBound;
+  }else {
+    return num;
+  }
+}
+
 // 잘못 접근한 것
 // 1. 조건까지는 잘 찾은 것 같음
 // 2. 내장 메서드인 Number.isNaN을 쓰기위해 찾아보지않고
@@ -92,3 +114,4 @@ const myAtoi = (s) => {
 
 // 교훈
 // 조금 더 아이디어 스케치 시간을 가지고 문제를 풀어보자
+
