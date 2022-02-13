@@ -34,6 +34,8 @@ var hasCycle = function(head) {
 };
 
 // Best Answer
+// 투포인터를 활용해 새롭게 값을 할당하는 행위를 아낄 수 있게 됨
+// 엣지케이스또한 단계를 늘려 수행시간을 줄이게 됨 
 var hasCycle = function(head) {
   //엣지케이스 처리
   if (head===null || head.next === null) return false;
