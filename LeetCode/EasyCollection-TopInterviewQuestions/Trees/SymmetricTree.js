@@ -98,4 +98,15 @@ const solution = (root) =>{
 }
 //내 문제점: 조건을 먼저 간소화 시켰어야함 (이걸 아하고 넘어가니까 코드만 늘어나고 풀어내질 못해버림)
 
-
+// 최종 답
+var isSymmetric = function(root) {
+  if(!root) return true; //아무것도 없음 걍 대칭
+  
+  //대칭되는지 확인하는 함수 만들기
+  const isSym = (first, second) => {
+      if(!first && !second) return true; // 양쪽 다 없으면 대칭임
+      if(!first || !second || first.val !== second.val) return false; //대칭 안됨
+      return isSym(first.left, second.right) && isSym(first.right, second.left);
+  }
+  return isSym(root.left, root.right);
+};
