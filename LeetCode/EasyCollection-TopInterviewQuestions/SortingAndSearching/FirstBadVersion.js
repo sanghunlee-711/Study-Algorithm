@@ -46,12 +46,14 @@ const solution = (isBadVersion) => {
   return function (n) {
     let start = 0;
     let end = n;
+
     while(start <= end){
       let mid = Math.floor((start+end)/2);
       if(isBadVersion(mid)){
         end = mid -1;
-        
-        if(!isBadVersion(mid-1)){
+
+        if(!isBadVersion(mid-1)){ 
+          //현재것이 true이고 그 앞에것이 false이면 현재것이 에러의 시발점이 된 버전의 값의 인덱스임ㅇㅇ
           return mid;
         }
       }else{
