@@ -67,6 +67,7 @@ const solution = (n) =>{
   //그니까 다 대응 했을때 0 나올때 까지 계속 1씩만 빼주면서 카운트를 올려주면 답이 나오게 됨
 var hammingWeight = function(n) {
   let counter =0;
+  
   while (n!=0){
       n=n&n-1
       counter++;
