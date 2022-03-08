@@ -7,3 +7,4 @@
 - [코딩테스트 광탈 방지 A to Z : JavaScript](https://programmers.co.kr/learn/courses/13213)
 - [LeetCode Explore](https://leetcode.com/explore/)
 - [프로그래머스-코딩테스트 연습](https://programmers.co.kr/learn/challenges)
+- [Udemy - JavaScript Algorithms and Data Structures Masterclass](https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/)

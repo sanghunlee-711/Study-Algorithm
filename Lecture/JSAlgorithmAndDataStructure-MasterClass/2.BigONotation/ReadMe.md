@@ -20,3 +20,19 @@
   * 사실 이걸 다 세는게 귀찮고 힘듬
   * 그래서 BIG O는 걍 시간 복잡도를 크게 보는 거임
 
+```javascript
+const sum = (n) =>{
+  //연산자 갯수는 들어오는 수에 관계없이 상수개로 고정
+  return (n*(n+1)) / 2;
+}
+const sum2 = (n) =>{
+  let total = 0;//할당 한번
+  //할당 한번  비교 n번 , ++ 연산 n번
+for(let i = 1; i <= total; i ++) {
+  total += i; //덧셈 및 재할당 n번
+}
+return total
+
+}
+
+```
