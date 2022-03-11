@@ -64,3 +64,44 @@ const maxProfit2 = (prices) =>{
   }
   return maxProfit
 }
+
+//Best solution
+var maxProfit = function(prices) {
+	let totalProfit = 0;
+	let i = 0;
+	let j = 0; //배열 탐색을 위한 인덱스
+
+	while (j < prices.length) {
+        let diff = prices[j] - prices[i];
+		if (diff < 0) { //차이가 0 보다 작게 되는 경우 i를 다시 업데이트 해줌
+			i = j;
+		} else {
+			totalProfit += diff;
+			i = j;
+		}
+        
+        j++;
+	}
+
+	return totalProfit;
+};
+
+//Memoization solved
+var maxProfit = function(prices) {
+  let i = 0;
+  let j = 0;
+  let profit = 0;
+  let arrayLength = prices.length;
+  
+  while(j < arrayLength) {
+      value = prices[j] - prices[i]; //매번 이윤 체크
+      if(value < 0) {
+          i = j; //시작 값을 새로 업데이트(구매값)
+      }else{
+          profit += value; //팔았으니까 이윤으로 추가
+          i = j; //팔았으니까 구매시점 업데이트
+      }
+      j++;
+  }
+  return profit;
+};
