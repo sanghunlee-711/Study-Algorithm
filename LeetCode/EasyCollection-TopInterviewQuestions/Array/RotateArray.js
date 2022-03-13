@@ -31,14 +31,8 @@ const rotate = (nums, k) =>{
 }
 rotate(nums, k)
 
-// best answer
-const rotate = (nums, k) =>{
-  k = k % nums.length; // 끝에서 몇개짜를 건지 결정
-  let spliceArr = nums.splice(-k); // 자른값 반환하여 그대로 사용 + 원본배열도 수정
-  return [...spliceArr , ...nums ]  // 이렇게 반환 ..
-}
 
-//best answer 2
+//best answer
 const rotate = (nums, k) =>{
   function reverse(arr, start, end) { //순수하게 앞뒤 뒤집는 함수 생성 O(n)
   while (start < end) {
@@ -55,5 +49,13 @@ reverse(nums, 0, (k - 1)); //0 부터 k-1만큼 뒤집음
 reverse(nums, k, (nums.length - 1)); //k부터 끝까지 다시 뒤집음
 return nums;
 }
+
+//best Answer 2
+var rotate = function(nums, k) {
+  //splice메서드는 배열의 기존요소를 삭제 또는 교체하거나 새 요소를 추가하여 원본배열을 변경함
+
+  const arr = nums.splice(nums.length - k % nums.length); //잘라낸거 arr변수에 저장
+  nums.unshift(...arr) // 다시 잘라낸거 앞에서 넣음으로 뒤집어짐.
+};
 
 // 천재가 너무 많다
