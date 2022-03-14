@@ -46,3 +46,16 @@ const best2 = (nums) => {
   return [...set][0]
 }
 
+//Review Answer
+//바로 전 리뷰문제인 Contains Duplicate문제에서 set을 썻으므로 재바르게 써봤다
+// set에 익숙해질 필요가 있는 듯ㅇㅇ..
+var singleNumber = function(nums) {
+  const set = new Set(); 
+  for(let i = 0; i < nums.length; i++) {
+      if(set.has(nums[i])) set.delete(nums[i]);
+      else set.add(nums[i]);
+  };
+  console.log(set);
+  return [...set][0]
+};
+
