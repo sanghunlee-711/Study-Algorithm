@@ -47,3 +47,22 @@ const intersect = (nums1, nums2) => {
   });
   return ans;
 };
+
+//Review (20220316)
+var intersect = function(nums1, nums2) {
+  const hash = {};
+  let answer = [];
+  
+  for(let i = 0; i < nums1.length; i++) {
+      hash[nums1[i]] ? hash[nums1[i]]++ : hash[nums1[i]] = 1;
+  }
+  
+  for(let j = 0; j < nums2.length; j++) {
+      if(hash[nums2[j]] > 0) {
+          answer.push(nums2[j]);
+          hash[nums2[j]]--;
+      } 
+  }
+  
+  return answer;
+};
