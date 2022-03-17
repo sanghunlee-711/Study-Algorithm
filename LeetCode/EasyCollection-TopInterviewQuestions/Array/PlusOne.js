@@ -35,3 +35,10 @@ var plusOneWithBigInt = (digits) =>  {
   const str = BigInt(digits.join(""))+ BigInt(1)+""
   return str.split("")
 };
+
+//Review : 20220317
+//Number객체로 해결이 되지 않을때 BigInt를 생각하자
+var plusOne = function(digits) {
+  const strs = BigInt(digits.join("")) + BigInt(1) + ""
+  return strs.split("")
+};
