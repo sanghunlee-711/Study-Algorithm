@@ -67,3 +67,22 @@ var moveZeroes = function(nums) {
   return nums;
   
 };
+
+//Review: 20220318
+var moveZeroes = function(nums) {
+  let length = nums.length;
+  let start = 0;
+  
+  for(let i = 0; i < length; i++) {
+    //0이 아닌 숫자들이 나타날때마다 인덱스 0부터해서 start를 늘려가며 계속 바꿔치기 해줌
+      if(nums[i] !== 0) {
+          nums[start] = nums[i]
+          start++;
+      }
+  }
+  
+  //마지막 0이 아닌 숫자의 다음인덱스로 업데이트된 start값 인덱스부터  끝까지 0 으로 다 채워줌.
+  for(;start < length; start++){
+      nums[start] = 0;
+  }
+};
