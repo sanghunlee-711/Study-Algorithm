@@ -59,10 +59,10 @@
         stack.push(current);
         current = current.left; //왼쪽서브트리부터 stack에 다 넣어줌
       }
-      //왼쪽 탐색기록들을 빼와서 제일 깊은 것 부터 reusult에 넣어줌
+      //현재 노드 방문 처리
       current = stack.pop(); 
       result.push(current.val); 
-      //오른쪽을 넣어줌.
+      //오른쪽을 탐색해봄
       current = current.right;
     }
     return result;
