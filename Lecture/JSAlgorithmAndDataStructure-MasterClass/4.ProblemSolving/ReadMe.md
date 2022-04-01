@@ -47,3 +47,24 @@ charCount("hello") // {h:1, e:1, l:2, o: 1}
 charCount("") //이러면 어떻게 return할 것인지 error ? , null ? ,undefined ? 만약 입력값이 이렇다면 ??
 
 ```
+
+## Break it down
+밟아야할 단계를 명확하게 만들어보기 해결책의 기본요소들을 적어보자
+
+### Examples
+아래 코드내의 주석과 같이 각 단계별로 유사코드(그러니까 설명)를 통해 적어 놓는 것임
+Wirte a function which takes in a string and returns counts of each character in the string.
+(문자열을 취하고 각 문자의 수를 반환하는 함수를 작성하세여)
+```javascript
+const charCount =(str) =>{
+  //make object to return at end
+  // loop over string, for each character ...
+    // if the char is a number/ltter  AND a key in object, add one to count
+    // if the char is a number/letter AND not in object , add it to object and set value to 1
+    // if character is something else (space, period, etc) don't do anything
+
+  // return object at end
+
+}
+
+```
