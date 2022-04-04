@@ -66,5 +66,34 @@ const charCount =(str) =>{
   // return object at end
 
 }
+```
 
+## Solve/Simplify
+1. 문제를 풀기 위해 제일 어려운 파트를 분리해봄
+2. 일단 어려운거 좀 무시함
+3. 간단한 파트부터 해결 해봄
+4. 그 다음 다시 어려운것으로 넘어가기 + 쉬운것과 통합하기
+```javascript
+const charCount =(str) =>{
+//문자나 숫자가 아니면 모두 무시하고 모든 문자는 소문자가 되어야함
+// 루핑에 익숙하지 않은 사람들은 그냥 문자 하나 하나를  소문자로 바꾸고 그것을 객체에 넣는 패턴을 하나의 인덱스 씩 실행하다보면 패턴을 발견할 거임
+// 대문자 소문자를 바꾸는게 어렵다면 루핑만 먼저하고 면접관한테 이거 안 익숙해서 이거는 그냥 넘어갓고 검색해도 되냐고 물어보는게 차라리 나음
+
+//make object to return at end
+var result = {};
+//loop over string, for each character ...
+for(var i = 0; i < str.length; i ++) {
+  var char = str[i].toLowerCase();
+    // if the char is a number/ltter  AND a key in object, add one to count
+  if(result[char] > 0) {
+    result[char]++ ;
+    // if the char is a number/letter AND not in object , add it to object and set value to 1
+  }else{
+    result[char] = 1;
+  };
+};
+  // if character is something else (space, period, etc) don't do anything
+  // return object at end
+return result;
+}
 ```
