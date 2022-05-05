@@ -18,3 +18,13 @@ function productOfArray (arr) {
   helper(arr, 0);
   return answer;
 }
+
+//solution
+//slice로 하나씩 잘라서 계산함 허허
+//slice(1) => 인덱스 1부터 그 다음 애들만 반환
+function productOfArray(arr) {
+  if(arr.length === 0) {
+      return 1;
+  }
+  return arr[0] * productOfArray(arr.slice(1));
+}
