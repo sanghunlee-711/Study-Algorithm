@@ -15,15 +15,15 @@ var lengthOfLastWord = function(s) {
 
 //1번방법의 해답
 var lengthOfLastWord = function(s) {
-  // Initialize length...
+  //마지막 문자열 길이 체크할 변수
   let length = 0;
-  // Create a loop starting from last character...
+  // 뒤에서부터 회문 시작
   for (let i = s.length - 1; i >= 0; i--) {
-      // If the character is not a space...
+      // 공백이 아닐때는 길이를 올려주자!
       if (s.charAt(i) != ' ') {
           length++;
       }
-      // Here it is the end of last word...
+      // 공백이면서 길이가 0이 아니면 끝이다!
       else if(length != 0) {
           break;
       }
