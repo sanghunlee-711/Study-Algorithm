@@ -59,7 +59,7 @@ var fractionToDecimal = function(numerator, denominator) {
   let answer = "";
   //둘다 음수 혹은 양수인지 확인을 위해 sign 메서드 사용 음수이면 -1반환 양수이면 +1을 반환해줌.
   if(Math.sign(numerator) !== Math.sign(denominator)) answer += "-";
-  
+   
   let n = Math.abs(numerator);
   const d = Math.abs(denominator);
   
